@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import User from './compontents/form'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import UsersTable from './compontents/users';
+import User from './compontents/form';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
     <div>
-      <User/>
+    <Router>
+      <Routes>
+      <Route path = "/user/create" element= {<User/>} />
+      <Route path = "/users" element= {<UsersTable/>} />
+      </Routes>
+    </Router>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
+
